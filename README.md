@@ -1,6 +1,9 @@
 # Local-Business-Analytics-Dashboard
 
-Table of Contents
+## Table of Contents
+
+---
+
 📝 Project Overview
 🎯 Project Objectives
 🤔 Problem statement
@@ -9,16 +12,24 @@ Table of Contents
 🌐 APIs
 🧑‍🤝‍🧑 Target Users
 
-💡Overview
+## 💡Overview
+
+---
+
 BizPulse is a powerful and impactful idea, especially in regions where businesses operate without data-driven insights. BizPulse is a business dashboard that aggregates sales, customer retention, and market trends. It allows small/local businesses know how well they are doing compared to their peers or when to take action such as increase stock, run promos, cut loss making products, etc.
 
-📚 Objectives
+## 📚 Objectives
+
 To build a free, responsive, and interactive dashboard web application that helps small business owners visualize and analyze sales data, customer behavior, product performance, and market trends.
 
-📄 Problem Statement
+## 📄 Problem Statement
+
+---
+
 Small businesses often lack access to expensive analytics software or engineering support to make data-driven decisions. This dashboard fills that gap by offering an easy-to-use interface for sales insights, customer trends, product performance, and basic market intelligence.
 
-✨ Features
+## ✨ Features
+
 📋Sales Dashboard: Visualizations for total revenue, orders, average order value.
 📊Customer Analytics: New vs Returning customers, Geo heatmaps(dummy data), repeat purchase interval
 🎯Product Performance: Top and low performing products
