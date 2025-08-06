@@ -2,12 +2,12 @@
 
 ## Table of Contents
 
-📝 Project Overview
-🎯 Project Objectives
-🤔 Problem statement
-✨ Features
-⛏️ Tech Stack
-🌐 APIs
+📝 Project Overview  
+🎯 Project Objectives  
+🤔 Problem statement  
+✨ Features  
+⛏️ Tech Stack  
+🌐 APIs  
 🧑‍🤝‍🧑 Target Users
 
 ## 💡Overview
