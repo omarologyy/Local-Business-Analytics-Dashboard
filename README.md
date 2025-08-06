@@ -24,14 +24,14 @@ Small businesses often lack access to expensive analytics software or engineerin
 
 ## ✨ Features
 
-📋Sales Dashboard: Visualizations for total revenue, orders, average order value.
-📊Customer Analytics: New vs Returning customers, Geo heatmaps(dummy data), repeat purchase interval
-🎯Product Performance: Top and low performing products
-💹Market Trends: Trending search keywords by category/region
-⚖️Competitor Comparison: Compare selected metrics anonymously
-💬Notifications and insights: Conditional alerts based on data (e.g. drop in sales)
-📈Onboarding and data inputs: Manual CSV upload for order/sales data
-📱Responsive Design: Access on any device with adaptive design
+📋Sales Dashboard: Visualizations for total revenue, orders, average order value.  
+📊Customer Analytics: New vs Returning customers, Geo heatmaps(dummy data), repeat purchase interval.  
+🎯Product Performance: Top and low performing products.  
+💹Market Trends: Trending search keywords by category/region.  
+⚖️Competitor Comparison: Compare selected metrics anonymously.  
+💬Notifications and insights: Conditional alerts based on data (e.g. drop in sales).  
+📈Onboarding and data inputs: Manual CSV upload for order/sales data.  
+📱Responsive Design: Access on any device with adaptive design.
 
 💻 Tech stack
 
