@@ -11,6 +11,7 @@ import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
 import Analytics from "./pages/Analytics/Analytics";
+import "leaflet/dist/leaflet.css";
 
 export default function App() {
   return (

@@ -13,6 +13,10 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import type { LatLngTuple } from "leaflet";
+import "leaflet/dist/leaflet.css";
+
 type TooltipPayload = ReadonlyArray<number>;
 
 type Coordinate = {
@@ -87,6 +91,7 @@ const repeatIntervalData = [
   // },
 ];
 
+const center: LatLngTuple = [51.505, -0.09];
 const RADIAN = Math.PI / 180;
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
@@ -194,10 +199,23 @@ export default function Analytics() {
           </div>
         </div>
 
-        {/* GEO HEATMAP */}
+        {/* GEO LOCATION */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
-          <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
-            <h3 className="text-black">Geo heatmap</h3>
+          <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6 ">
+            <h3 className="text-black p-2">Geo location</h3>
+            <div className="w-full h-[30vh] sm:h-[40vh] md:h-[40vh] lg:h-[50vh]">
+              <MapContainer
+                center={center}
+                zoom={13}
+                scrollWheelZoom={false}
+                className="h-full w-full rounded-lg"
+              >
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                <Marker position={center}>
+                  <Popup>Umar</Popup>
+                </Marker>
+              </MapContainer>
+            </div>
           </div>
         </div>
       </div>
