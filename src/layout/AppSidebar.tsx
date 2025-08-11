@@ -12,6 +12,7 @@ import {
   TableIcon,
   Analytics,
   UserCircleIcon,
+  SearchIcon,
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
 
@@ -33,6 +34,11 @@ const navItems: NavItem[] = [
     name: "Analytics",
     icon: <Analytics />,
     path: "/analytics",
+  },
+  {
+    name: "Trending topics",
+    icon: <SearchIcon />,
+    path: "/trends",
   },
   {
     icon: <CalenderIcon />,

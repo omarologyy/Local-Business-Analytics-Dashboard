@@ -13,6 +13,7 @@ import Home from "./pages/Dashboard/Home";
 import Analytics from "./pages/Analytics/Analytics";
 import Performance from "./pages/ProductPerformance/Performance";
 import "leaflet/dist/leaflet.css";
+import SearchPage from "./pages/Trends/Search";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
 
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
+            <Route path="/trends" element={<SearchPage />} />
             <Route path="/product-performance" element={<Performance />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/analytics" element={<Analytics />} />
