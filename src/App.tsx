@@ -11,6 +11,7 @@ import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
 import Analytics from "./pages/Analytics/Analytics";
+import Performance from "./pages/ProductPerformance/Performance";
 import "leaflet/dist/leaflet.css";
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
 
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
+            <Route path="/product-performance" element={<Performance />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/blank" element={<Blank />} />

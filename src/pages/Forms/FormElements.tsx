@@ -18,7 +18,7 @@ export default function FormElements() {
         title="BizPulse"
         description="A business dashboard that aggregates sales, customer retention, and market trends."
       />
-      <PageBreadcrumb pageTitle="From Elements" />
+      <PageBreadcrumb pageTitle="Product Performance" />
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         <div className="space-y-6">
           <DefaultInputs />

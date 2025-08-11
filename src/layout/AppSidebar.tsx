@@ -40,6 +40,12 @@ const navItems: NavItem[] = [
     path: "/calendar",
   },
   {
+    name: "Product Performance",
+    icon: <ListIcon />,
+    path: "/product-performance",
+    // subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
+  },
+  {
     icon: <UserCircleIcon />,
     name: "User Profile",
     path: "/profile",
@@ -51,7 +57,7 @@ const navItems: NavItem[] = [
     // subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
   },
   {
-    name: "Customer records",
+    name: "Customer Records",
     icon: <TableIcon />,
     path: "/basic-tables",
     // subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
