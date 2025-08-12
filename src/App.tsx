@@ -13,7 +13,7 @@ import Home from "./pages/Dashboard/Home";
 import Analytics from "./pages/Analytics/Analytics";
 import Performance from "./pages/ProductPerformance/Performance";
 import "leaflet/dist/leaflet.css";
-import SearchPage from "./pages/Trends/Search";
+import SearchPage from "./pages/Trends/TrendingSearch";
 
 export default function App() {
   return (
