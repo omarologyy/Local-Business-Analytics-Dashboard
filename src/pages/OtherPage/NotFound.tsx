@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <>
       <PageMeta
-        title="BizPulse"
+        title="UmarNova"
         description="A business dashboard that aggregates sales, customer retention, and market trends."
       />
       <div className="relative flex flex-col items-center justify-center min-h-screen p-6 overflow-hidden z-1">

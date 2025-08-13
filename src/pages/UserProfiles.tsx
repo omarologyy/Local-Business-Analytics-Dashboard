@@ -8,7 +8,7 @@ export default function UserProfiles() {
   return (
     <>
       <PageMeta
-        title="BizPulse"
+        title="UmarNova"
         description="A business dashboard that aggregates sales, customer retention, and market trends."
       />
       <PageBreadcrumb pageTitle="Profile" />

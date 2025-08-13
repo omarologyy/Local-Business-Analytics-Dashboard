@@ -13,6 +13,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+import PageBreadcrumb from "../../components/common/PageBreadCrumb";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import type { LatLngTuple } from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -67,28 +68,22 @@ const data = [
 const repeatIntervalData = [
   {
     interval: "0-7 days",
-    new: "4000",
-    old: "2400",
+    New: "4000",
+    Old: "2400",
     count: "2400",
   },
   {
     interval: "8-14 days",
-    new: "3000",
-    old: "1398",
+    New: "3000",
+    Old: "1398",
     count: "2210",
   },
   {
     interval: "15-21 days",
-    new: "2000",
-    old: "9800",
+    New: "2000",
+    Old: "9800",
     count: "2290",
   },
-  // {
-  //   interval: "22-30 days",
-  //   new: "2780",
-  //   old: "3980",
-  //   count: "2000",
-  // },
 ];
 
 const center: LatLngTuple = [51.505, -0.09];
@@ -120,14 +115,12 @@ const renderCustomizedLabel = ({
   );
 };
 
-import PageBreadcrumb from "../../components/common/PageBreadCrumb";
-
 export default function Analytics() {
   return (
     <>
       <PageBreadcrumb pageTitle="Customer Analytics" />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
-        {/* <!-- NEW VS OLD CUSTOMERS --> */}
+        {/* <!-- New VS Old CUSTOMERS --> */}
         <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
           <h3 className="text-black">New vs Old Customers</h3>
 
@@ -142,7 +135,7 @@ export default function Analytics() {
                     labelLine={false}
                     label={renderCustomizedLabel}
                     outerRadius={80}
-                    fill="#8884d8"
+                    fill="#3399ff"
                     dataKey="value"
                   >
                     {data.map((entry, index) => (
@@ -185,13 +178,13 @@ export default function Analytics() {
                 <Tooltip />
                 <Legend />
                 <Bar
-                  dataKey="new"
-                  fill="#8884d8"
+                  dataKey="New"
+                  fill="#3399ff"
                   activeBar={<Rectangle fill="pink" stroke="blue" />}
                 />
                 <Bar
-                  dataKey="old"
-                  fill="#82ca9d"
+                  dataKey="Old"
+                  fill="#00cc99"
                   activeBar={<Rectangle fill="gold" stroke="purple" />}
                 />
               </BarChart>

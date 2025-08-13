@@ -7,7 +7,7 @@ export default function BasicTables() {
   return (
     <>
       <PageMeta
-        title="BizPulse"
+        title="UmarNova"
         description="A business dashboard that aggregates sales, customer retention, and market trends."
       />
       <PageBreadcrumb pageTitle="Customer records" />

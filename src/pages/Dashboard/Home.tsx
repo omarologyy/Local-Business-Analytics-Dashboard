@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <PageMeta
-        title="BizPulse"
+        title="UmarNova"
         description="A business dashboard that aggregates sales, customer retention, and market trends."
       />
       <div className="grid grid-cols-12 gap-4 md:gap-6">

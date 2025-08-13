@@ -28,7 +28,6 @@ const navItems: NavItem[] = [
     icon: <GridIcon />,
     name: "Dashboard",
     path: "/",
-    // subItems: [{ name: "Ecommerce", path: "/", pro: false }],
   },
   {
     name: "Analytics",
@@ -49,7 +48,6 @@ const navItems: NavItem[] = [
     name: "Product Performance",
     icon: <ListIcon />,
     path: "/product-performance",
-    // subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
   },
   {
     icon: <UserCircleIcon />,
@@ -60,45 +58,15 @@ const navItems: NavItem[] = [
     name: "Forms",
     icon: <ListIcon />,
     path: "/form-elements",
-    // subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
   },
   {
     name: "Customer Records",
     icon: <TableIcon />,
     path: "/basic-tables",
-    // subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
   },
-  // {
-  //   name: "Pages",
-  //   icon: <PageIcon />,
-  //   subItems: [
-  //     { name: "Blank Page", path: "/blank", pro: false },
-  //     { name: "404 Error", path: "/error-404", pro: false },
-  //   ],
-  // },
 ];
 
 const othersItems: NavItem[] = [
-  // {
-  //   icon: <PieChartIcon />,
-  //   name: "Charts",
-  //   subItems: [
-  //     { name: "Line Chart", path: "/line-chart", pro: false },
-  //     { name: "Bar Chart", path: "/bar-chart", pro: false },
-  //   ],
-  // },
-  // {
-  //   icon: <BoxCubeIcon />,
-  //   name: "UI Elements",
-  //   subItems: [
-  //     { name: "Alerts", path: "/alerts", pro: false },
-  //     { name: "Avatar", path: "/avatars", pro: false },
-  //     { name: "Badge", path: "/badge", pro: false },
-  //     { name: "Buttons", path: "/buttons", pro: false },
-  //     { name: "Images", path: "/images", pro: false },
-  //     { name: "Videos", path: "/videos", pro: false },
-  //   ],
-  // },
   {
     icon: <PlugInIcon />,
     name: "Authentication",
@@ -325,14 +293,14 @@ const AppSidebar: React.FC = () => {
             <>
               <img
                 className="dark:hidden"
-                src="/images/logo/logo.svg"
+                src="/images/logo/UmarNovalogo.svg"
                 alt="Logo"
                 width={150}
                 height={40}
               />
               <img
                 className="hidden dark:block"
-                src="/images/logo/logo-dark.svg"
+                src="/images/logo/UmarNovalogo.svg"
                 alt="Logo"
                 width={150}
                 height={40}
@@ -340,7 +308,7 @@ const AppSidebar: React.FC = () => {
             </>
           ) : (
             <img
-              src="/images/logo/logo-icon.svg"
+              src="/images/logo/UmarNovalogo.svg"
               alt="Logo"
               width={32}
               height={32}

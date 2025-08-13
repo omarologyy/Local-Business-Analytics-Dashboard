@@ -15,7 +15,7 @@ export default function FormElements() {
   return (
     <div>
       <PageMeta
-        title="BizPulse"
+        title="UmarNova"
         description="A business dashboard that aggregates sales, customer retention, and market trends."
       />
       <PageBreadcrumb pageTitle="Product Performance" />
