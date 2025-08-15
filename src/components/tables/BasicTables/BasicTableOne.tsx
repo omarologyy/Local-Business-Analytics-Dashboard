@@ -94,7 +94,7 @@ const tableData: Order[] = [
     user: {
       image: "/images/user/user-21.jpg",
       name: "Carla George",
-      role: "Front-end Developer",
+      role: "Freelancer",
     },
     projectName: "Website",
     team: {
