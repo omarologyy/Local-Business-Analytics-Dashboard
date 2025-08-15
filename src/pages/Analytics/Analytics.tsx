@@ -122,7 +122,9 @@ export default function Analytics() {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
         {/* <!-- New VS Old CUSTOMERS --> */}
         <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
-          <h3 className="text-black">New vs Old Customers</h3>
+          <h3 className="text-black dark:text-gray-400">
+            New vs Old Customers
+          </h3>
 
           <div className="flex items-end justify-between mt-5 w-full">
             <div className="w-full h-64">
@@ -149,8 +151,12 @@ export default function Analytics() {
               </ResponsiveContainer>
             </div>
             <div className="flex-row justify-items-start">
-              <p className="whitespace-nowrap">🔵 New Customers</p>
-              <p className="whitespace-nowrap">🟢 Old Customers</p>
+              <p className="whitespace-nowrap dark:text-gray-400">
+                🔵 New Customers
+              </p>
+              <p className="whitespace-nowrap dark:text-gray-400">
+                🟢 Old Customers
+              </p>
             </div>
           </div>
         </div>
@@ -158,7 +164,7 @@ export default function Analytics() {
 
         {/* <!-- PURCHASE INTERVAL --> */}
         <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6">
-          <h3 className="text-black">Purchase Interval</h3>
+          <h3 className="text-black dark:text-gray-400">Purchase Interval</h3>
           <div className=" mt-5 w-full h-80">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
@@ -195,7 +201,7 @@ export default function Analytics() {
         {/* GEO LOCATION */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
           <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6 ">
-            <h3 className="text-black p-2">Geo location</h3>
+            <h3 className="text-black dark:text-gray-400 p-2">Geo location</h3>
             <div className="w-full h-[30vh] sm:h-[40vh] md:h-[40vh] lg:h-[50vh]">
               <MapContainer
                 center={center}

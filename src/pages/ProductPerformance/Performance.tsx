@@ -42,7 +42,9 @@ export default function Performance() {
       <PageBreadcrumb pageTitle="Product Performance" />
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         <div className="space-y-6">
-          <p className="text-black">Top and low performing products</p>
+          <p className="text-black dark:text-gray-400">
+            Top and low performing products
+          </p>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               width={500}
@@ -75,7 +77,9 @@ export default function Performance() {
         </div>
         <div className="space-y-6">
           <Lottie animationData={stocks} />
-          <p className="text-center">Stock Level Indicator</p>
+          <p className="text-center dark:text-gray-400">
+            Stock Level Indicator
+          </p>
         </div>
       </div>
     </div>
