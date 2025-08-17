@@ -1,18 +1,56 @@
 import React, { useState, useEffect } from "react";
 import { TrendingUp, Globe, Tag, RefreshCw, AlertCircle } from "lucide-react";
+import { DUMMY_TREND_DATA, TrendData, TrendingKeyword } from "./DummyData";
 
-interface TrendingKeyword {
-  keyword: string;
-  volume: number;
-  growth: number;
-  category: string;
+// Serper API Response Types
+interface SerperOrganicResult {
+  title: string;
+  link: string;
+  snippet: string;
+  date?: string;
+  position: number;
 }
 
-interface TrendData {
-  category: string;
-  region: string;
-  keywords: TrendingKeyword[];
-  lastUpdated: string;
+interface SerperKnowledgeGraph {
+  title?: string;
+  type?: string;
+  website?: string;
+  imageUrl?: string;
+  description?: string;
+  descriptionSource?: string;
+  descriptionLink?: string;
+  attributes?: Record<string, string>;
+}
+
+interface SerperPeopleAlsoAsk {
+  question: string;
+  snippet: string;
+  title: string;
+  link: string;
+}
+
+interface SerperRelatedSearches {
+  query: string;
+}
+
+interface SerperSearchParameters {
+  q: string;
+  gl?: string;
+  hl?: string;
+  num?: number;
+  autocorrect?: boolean;
+  page?: number;
+  type?: string;
+  engine?: string;
+}
+
+interface SerperApiResponse {
+  searchParameters: SerperSearchParameters;
+  organic?: SerperOrganicResult[];
+  knowledgeGraph?: SerperKnowledgeGraph;
+  peopleAlsoAsk?: SerperPeopleAlsoAsk[];
+  relatedSearches?: SerperRelatedSearches[];
+  credits?: number;
 }
 
 // API Configuration
@@ -20,121 +58,6 @@ const SERPER_CONFIG = {
   apiKey: import.meta.env.VITE_SERPER_API_KEY,
   baseUrl: "https://google.serper.dev/search",
 };
-
-// Dummy fallback data
-const DUMMY_TREND_DATA: TrendData[] = [
-  {
-    category: "Technology",
-    region: "Global",
-    keywords: [
-      {
-        keyword: "Artificial intelligence",
-        volume: 2500000,
-        growth: 15.2,
-        category: "AI",
-      },
-      {
-        keyword: "Cyber attack",
-        volume: 890000,
-        growth: 8.7,
-        category: "Cyber Security",
-      },
-      {
-        keyword: "5G URLLC",
-        volume: 650000,
-        growth: 12.3,
-        category: "5G",
-      },
-      {
-        keyword: "Cloud automation",
-        volume: 420000,
-        growth: 25.1,
-        category: "Automation",
-      },
-      {
-        keyword: "Drones",
-        volume: 1800000,
-        growth: 5.6,
-        category: "General",
-      },
-    ],
-    lastUpdated: new Date().toISOString(),
-  },
-  {
-    category: "Business",
-    region: "US",
-    keywords: [
-      {
-        keyword: "startup funding",
-        volume: 340000,
-        growth: 18.9,
-        category: "Finance",
-      },
-      {
-        keyword: "remote work",
-        volume: 1200000,
-        growth: 3.2,
-        category: "Workplace",
-      },
-      {
-        keyword: "digital marketing",
-        volume: 980000,
-        growth: 7.8,
-        category: "Marketing",
-      },
-      {
-        keyword: "cryptocurrency",
-        volume: 2100000,
-        growth: -2.4,
-        category: "Finance",
-      },
-      {
-        keyword: "e-commerce",
-        volume: 1450000,
-        growth: 9.1,
-        category: "Retail",
-      },
-    ],
-    lastUpdated: new Date().toISOString(),
-  },
-  {
-    category: "Entertainment",
-    region: "Global",
-    keywords: [
-      {
-        keyword: "streaming services",
-        volume: 890000,
-        growth: 4.5,
-        category: "Media",
-      },
-      {
-        keyword: "video games",
-        volume: 1600000,
-        growth: 11.2,
-        category: "Gaming",
-      },
-      {
-        keyword: "social media",
-        volume: 2200000,
-        growth: -1.8,
-        category: "Social",
-      },
-      {
-        keyword: "mobile apps",
-        volume: 750000,
-        growth: 6.9,
-        category: "Technology",
-      },
-      {
-        keyword: "content creation",
-        volume: 620000,
-        growth: 22.7,
-        category: "Creator Economy",
-      },
-    ],
-    lastUpdated: new Date().toISOString(),
-  },
-];
 
 const TrendingSearch: React.FC = () => {
   const [trendData, setTrendData] = useState<TrendData[]>([]);
@@ -145,8 +68,10 @@ const TrendingSearch: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [usingFallback, setUsingFallback] = useState<boolean>(true);
 
-  // Serper API call function
-  const fetchTrendingData = async (query: string): Promise<any> => {
+  // Serper API call function with proper typing
+  const fetchTrendingData = async (
+    query: string
+  ): Promise<SerperApiResponse> => {
     const myHeaders = new Headers();
     myHeaders.append("X-API-KEY", SERPER_CONFIG.apiKey);
     myHeaders.append("Content-Type", "application/json");
@@ -165,7 +90,7 @@ const TrendingSearch: React.FC = () => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      const result = await response.json();
+      const result: SerperApiResponse = await response.json();
       return result;
     } catch (error) {
       console.error("Serper API Error:", error);
@@ -173,25 +98,26 @@ const TrendingSearch: React.FC = () => {
     }
   };
 
-  // Process Serper API response to extract trending keywords
+  // Process Serper API response to extract trending keywords with proper typing
   const processTrendingData = (
-    apiResponse: any,
+    apiResponse: SerperApiResponse,
     category: string,
     region: string
   ): TrendData => {
-    // This adapt based on actual Serper API response structure
     const processedKeywords: TrendingKeyword[] = [];
 
     if (apiResponse.organic) {
-      apiResponse.organic.slice(0, 5).forEach((item: any, index: number) => {
-        processedKeywords.push({
-          keyword:
-            item.title?.toLowerCase().slice(0, 30) || `trending ${index + 1}`,
-          volume: Math.floor(Math.random() * 1000000) + 100000,
-          growth: Math.floor(Math.random() * 40) - 10,
-          category: category,
+      apiResponse.organic
+        .slice(0, 5)
+        .forEach((item: SerperOrganicResult, index: number) => {
+          processedKeywords.push({
+            keyword:
+              item.title?.toLowerCase().slice(0, 30) || `trending ${index + 1}`,
+            volume: Math.floor(Math.random() * 1000000) + 100000,
+            growth: Math.floor(Math.random() * 40) - 10,
+            category: category,
+          });
         });
-      });
     }
 
     return {
@@ -203,7 +129,7 @@ const TrendingSearch: React.FC = () => {
   };
 
   // Fetch data from API or use fallback
-  const fetchData = async () => {
+  const fetchData = async (): Promise<void> => {
     setLoading(true);
     setError(null);
 
@@ -297,6 +223,7 @@ const TrendingSearch: React.FC = () => {
                   <option value="US">United States</option>
                   <option value="UK">United Kingdom</option>
                   <option value="EU">Europe</option>
+                  <option value="NG">Nigeria</option>
                 </select>
               </div>
             </div>
@@ -390,7 +317,7 @@ const TrendingSearch: React.FC = () => {
 
         {/* Footer */}
         <div className="text-center mt-8 text-gray-500">
-          <p>Powered by Serper API</p>
+          <p>Powered by Serper API </p>
         </div>
       </div>
     </div>
