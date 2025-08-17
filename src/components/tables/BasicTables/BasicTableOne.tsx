@@ -30,9 +30,9 @@ const tableData: Order[] = [
     user: {
       image: "/images/user/user-17.jpg",
       name: "Lindsey Curtis",
-      role: "Web Designer",
+      role: "Software Developer",
     },
-    projectName: "Agency Website",
+    projectName: "Google",
     team: {
       images: [
         "/images/user/user-22.jpg",
@@ -48,9 +48,9 @@ const tableData: Order[] = [
     user: {
       image: "/images/user/user-18.jpg",
       name: "Kaiya George",
-      role: "Project Manager",
+      role: "Procurement Manager",
     },
-    projectName: "Technology",
+    projectName: "Amazon",
     team: {
       images: ["/images/user/user-25.jpg", "/images/user/user-26.jpg"],
     },
@@ -62,9 +62,9 @@ const tableData: Order[] = [
     user: {
       image: "/images/user/user-17.jpg",
       name: "Zain Geidt",
-      role: "Content Writing",
+      role: "Cloud Engineer",
     },
-    projectName: "Blog Writing",
+    projectName: "Microsoft",
     team: {
       images: ["/images/user/user-27.jpg"],
     },
@@ -78,7 +78,7 @@ const tableData: Order[] = [
       name: "Abram Schleifer",
       role: "Digital Marketer",
     },
-    projectName: "Social Media",
+    projectName: "Tesla",
     team: {
       images: [
         "/images/user/user-28.jpg",
@@ -94,9 +94,9 @@ const tableData: Order[] = [
     user: {
       image: "/images/user/user-21.jpg",
       name: "Carla George",
-      role: "Freelancer",
+      role: "Shipping Manager",
     },
-    projectName: "Website",
+    projectName: "Chevron",
     team: {
       images: [
         "/images/user/user-31.jpg",
@@ -127,7 +127,7 @@ export default function BasicTableOne() {
                 isHeader
                 className="px-5 py-3 font-medium text-gray-500 text-start text-theme-xs dark:text-gray-400"
               >
-                Project Name
+                Company Name
               </TableCell>
               <TableCell
                 isHeader
