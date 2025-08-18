@@ -57,6 +57,7 @@ import { ReactComponent as ErrorHexaIcon } from "./info-hexa.svg?react";
 import { ReactComponent as Analytics } from "./analytics.svg?react";
 import { ReactComponent as CurrencyIcon } from "./currency-revenue.svg?react";
 import { ReactComponent as SearchIcon } from "./search.svg?react";
+import { ReactComponent as Analytical } from "./analytical.svg?react";
 
 export {
   ErrorHexaIcon,
@@ -74,6 +75,7 @@ export {
   CheckCircleIcon,
   CurrencyIcon,
   AlertIcon,
+  Analytical,
   InfoIcon,
   ErrorIcon,
   ArrowUpIcon,
