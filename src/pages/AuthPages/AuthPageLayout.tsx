@@ -21,7 +21,7 @@ export default function AuthLayout({
                 <img
                   width={231}
                   height={48}
-                  src="/logo/logo-2-square.png"
+                  src="/images/logo/UmarNovalogo.svg"
                   alt="Logo"
                 />
               </Link>
