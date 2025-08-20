@@ -14,7 +14,7 @@ import {
 } from "recharts";
 
 import PageBreadcrumb from "../../components/common/PageBreadCrumb";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 import type { LatLngTuple } from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -210,9 +210,9 @@ export default function Analytics() {
                 className="h-full w-full rounded-lg"
               >
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                <Marker position={center}>
+                {/* <Marker position={center}>
                   <Popup>Umar</Popup>
-                </Marker>
+                </Marker> */}
               </MapContainer>
             </div>
           </div>
