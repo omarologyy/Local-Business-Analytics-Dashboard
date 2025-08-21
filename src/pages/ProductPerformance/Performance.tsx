@@ -11,15 +11,10 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { useState, useEffect } from "react";
 
 import stocks from "../../../src/stocks.json";
 import Lottie from "lottie-react";
-
-type productsData = {
-  interval: "string";
-  top: "number";
-  low: "number";
-};
 
 const productsData = [
   {
@@ -55,6 +50,28 @@ const productsData = [
 ];
 
 export default function Performance() {
+  const [fontSize, setFontSize] = useState(12);
+
+  useEffect(() => {
+    const updateFontSize = () => {
+      if (window.innerWidth < 640) {
+        // Small screens
+        setFontSize(8);
+      } else if (window.innerWidth < 768) {
+        // Medium screens
+        setFontSize(10);
+      } else {
+        // Large screens
+        setFontSize(12);
+      }
+    };
+
+    updateFontSize();
+    window.addEventListener("resize", updateFontSize);
+
+    return () => window.removeEventListener("resize", updateFontSize);
+  }, []);
+
   return (
     <div>
       <PageMeta
@@ -63,39 +80,47 @@ export default function Performance() {
       />
       <PageBreadcrumb pageTitle="Product Performance" />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:gap-6">
-        <div className="space-y-6 h-64 sm:h-80 md:h-96">
+        <div className="space-y-6">
           <p className="text-black dark:text-gray-400">
             Top and low performing products
           </p>
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              width={500}
-              height={300}
-              data={productsData}
-              margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="interval" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Bar
-                dataKey="top"
-                fill="#8884d8"
-                activeBar={<Rectangle fill="pink" stroke="blue" />}
-              />
-              <Bar
-                dataKey="low"
-                fill="#82ca9d"
-                activeBar={<Rectangle fill="gold" stroke="purple" />}
-              />
-            </BarChart>
-          </ResponsiveContainer>
+          <div className="h-64 sm:h-80 md:h-96">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                width={500}
+                height={300}
+                data={productsData}
+                margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis
+                  dataKey="interval"
+                  tick={{ fontSize: fontSize }}
+                  angle={-45}
+                  textAnchor="end"
+                  height={60}
+                />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar
+                  dataKey="top"
+                  fill="#8884d8"
+                  activeBar={<Rectangle fill="pink" stroke="blue" />}
+                />
+                <Bar
+                  dataKey="low"
+                  fill="#82ca9d"
+                  activeBar={<Rectangle fill="gold" stroke="purple" />}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
         <div className="space-y-6">
           <Lottie animationData={stocks} />
