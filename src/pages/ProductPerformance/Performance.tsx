@@ -14,6 +14,13 @@ import {
 
 import stocks from "../../../src/stocks.json";
 import Lottie from "lottie-react";
+
+type productsData = {
+  interval: "string";
+  top: "number";
+  low: "number";
+};
+
 const productsData = [
   {
     interval: "Product A",
@@ -30,6 +37,21 @@ const productsData = [
     top: "6000",
     low: "1000",
   },
+  {
+    interval: "Product D",
+    top: "3500",
+    low: "2000",
+  },
+  {
+    interval: "Product E",
+    top: "4000",
+    low: "500",
+  },
+  {
+    interval: "Product F",
+    top: "5000",
+    low: "2500",
+  },
 ];
 
 export default function Performance() {
@@ -40,8 +62,8 @@ export default function Performance() {
         description="A business dashboard that aggregates sales, customer retention, and market trends."
       />
       <PageBreadcrumb pageTitle="Product Performance" />
-      <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
-        <div className="space-y-6">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:gap-6">
+        <div className="space-y-6 h-64 sm:h-80 md:h-96">
           <p className="text-black dark:text-gray-400">
             Top and low performing products
           </p>
